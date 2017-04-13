@@ -2,13 +2,13 @@ package miscellaneous;
 
 public class PlusOne {
 	public static void main(String[] args) {
-		int[] arr = {9,9,9};
+		int[] arr = {9,8,9};
 		int[] result = new int[arr.length+1];
 		PlusOne pl = new PlusOne();
 		result = pl.plusOne(arr);
 		for(int i: result)
 		{
-			System.out.println(i);
+			System.out.print(i);
 		}
 	}
 	public int[] plusOne(int[] digits) {
@@ -24,9 +24,10 @@ public class PlusOne {
 	            carry=0;
 	        }
 	        digits[i]=sum%10;
-	        //System.out.print(digits[i]);
+	        System.out.print(digits[i]);
 	    }
-	 System.out.println(carry);
+	    System.out.println();
+	    System.out.println(carry);
 	    if(carry==1){
 	        int[] result = new int[digits.length+1];
 	        System.arraycopy(digits, 0, result, 1, digits.length);

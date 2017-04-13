@@ -30,6 +30,7 @@ public class WordSearch {
 	    }
 	 
 	    if(board[i][j] == word.charAt(k)){
+	    	
 	        char temp = board[i][j];
 	        board[i][j]='#';
 	        if(k==word.length()-1){

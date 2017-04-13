@@ -6,7 +6,7 @@ import java.util.Set;
 public class PalindromePermutation {
 	public static void main(String[] args) {
 		PalindromePermutation pm = new PalindromePermutation();
-		String s = "code";
+		String s = "coddo";
 		System.out.println("Result: "+pm.canPermutePalin(s));
 	}
 	

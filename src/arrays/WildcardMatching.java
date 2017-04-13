@@ -2,7 +2,10 @@ package arrays;
 
 public class WildcardMatching {
 	public static void main(String[] args) {
-		
+		String s = "aabb";
+		String p = "*abc";
+		WildcardMatching wm = new WildcardMatching();
+		System.out.println(wm.isMatch(s, p));
 	}
 	
 	public boolean isMatch(String s, String p){
@@ -26,6 +29,8 @@ public class WildcardMatching {
 			} else {
 				return false;
 			}
+			System.out.println("i:"+i);
+			System.out.println("j:"+j);
 		}
 		while(j<p.length() && p.charAt(j) == '*'){
 			++j;

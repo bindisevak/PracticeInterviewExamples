@@ -34,6 +34,8 @@ public class KthLargest {
 		}
 		swap(nums,left,right);
 		
+//		System.out.println(k);
+//		System.out.println(left);
 		if(k == left+1){
 			return pivot;
 		} else if(k < left+1){

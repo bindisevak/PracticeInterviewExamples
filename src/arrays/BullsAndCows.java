@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class BullsAndCows {
 	public static void main(String[] args) {
-		System.out.println("Count: "+getHint("1807", "7810"));
+		System.out.println("Count: "+getHint1("1807", "7810"));
 	}
 	
 	public static String getHint(String secret, String guess){
@@ -50,7 +50,7 @@ public class BullsAndCows {
 		return countBull+"A"+countCow+"B";
 	}
 	
-	public String getHint1(String secret, String guess) {
+	public static String getHint1(String secret, String guess) {
 	    int countBull=0;
 	    int countCow =0;
 	    int[] arr1 = new int[10];
@@ -69,6 +69,8 @@ public class BullsAndCows {
 	    }
 	 
 	    for(int i=0; i<10; i++){
+	    	System.out.println(arr1[i]);
+	    	//System.out.println(arr2[i]);
 	        countCow += Math.min(arr1[i], arr2[i]);
 	    }
 	 

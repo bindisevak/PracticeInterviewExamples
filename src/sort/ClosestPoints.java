@@ -3,74 +3,78 @@ package sort;
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Point implements Comparator<Point>{
-	int x, y;
-	Point(int x, int y){
-		this.x = x;
-		this.y = y;
-	}
-	Point(){
-		
-	}
-	private static final Point root = new Point();
-	double pointDistance(Point p1, Point p2){
-		return Math.sqrt(Math.pow(2, (p1.x - p2.x)) + Math.pow(2, (p1.y - p2.y)));
-	}
+ class Point {
+    public double x;
+    public double y;
 
-	@Override
-	public int compare(Point p1, Point p2) {
-		double d1 = pointDistance(p1, root);
-		double d2 = pointDistance(p2, root);
-		if(d1 < d2){
-			return -1;
-		}
-		if(d1 == d2){
-			return 0;
-		}
-		return 1;
-	}
-	
+    public Point(final double x, final double y) {
+        this.x = x;
+        this.y = y;
+    }
 }
-public class ClosestPoints {
-	
-	 Point comp = new Point();
 
-	
-	
-	public Point[] getClosest(Point[] input, int k){
-		if(k <= 0) return new Point[0];
+public class ClosestPoints{
+public static double kthSmallest(final double[] A, final int p, final int r, final int k) {
+    if (p < r) {
+        final int q = RandomizedPartition(A, p, r);
 
-		int l = 0; int h = input.length -1; int target = k-1;
-		int p = partition(input, l, h);
-		while(p != target){
-			if(p < target){
-				p = partition(input, p+1, h);
-			} else{
-				p = partition(input, l, p-1);
-			}
-		}
-		return Arrays.copyOf(input, k);
-	}
-	
-	int partition(Point[] input, int l, int h){
-		int range = h-l+1;
-		int p = l + (int)Math.random()*range;
-		swap(input, p, h);
-		Point pivot = input[h];
-		int max = l;
-		for(int i = l; i < h; i++){
-			if(comp.compare(input[i], pivot) < 1){
-				swap(input, i, max);
-				max++;
-			}
-		}
-		swap(input, max, h);
-		return max;
-	}
-	
-	void swap(Object[] input, int i, int j){
-		Object tmp = input[i];
-		input[i] = input[j];
-		input[j] = tmp;
-	}
+        final int n = q - p + 1;
+        if (k == n) {
+            return A[q];
+        } else if (k < n) {
+            return kthSmallest(A, p, q - 1, k);
+        } else {
+            return kthSmallest(A, q + 1, r, k - n);
+        }
+    } else {
+        return Double.MIN_VALUE;
+    }
 }
+
+public static Point[] closestkWithOrderStatistics(final Point points[], final int k) {
+    final int n = points.length;
+    final double[] dist = new double[n];
+    for (int i = 0; i < n; i++) {
+        dist[i] = Math.sqrt(points[i].x * points[i].x + points[i].y * points[i].y);
+    }
+    final double kthMin = kthSmallest(dist, 0, n - 1, k);
+
+    final Point[] result = new Point[k];
+    for (int i = 0, j = 0; i < n && j < k; i++) {
+        final double d = Math.sqrt(points[i].x * points[i].x + points[i].y * points[i].y);
+        if (d <= kthMin) {
+            result[j++] = points[i];
+        }
+    }
+
+    return result;
+}
+
+private static void swap(final double input[], final int i, final int j) {
+    final double temp = input[i];
+    input[i] = input[j];
+    input[j] = temp;
+}
+
+private static int partition(final double[] A, final int p, final int r) {
+    final double pivot = A[r];
+    int i = p - 1;
+    int j = p;
+
+    for (j = p; j < r; j++) {
+        if (A[j] <= pivot) {
+            swap(A, ++i, j);
+        }
+    }
+
+    swap(A, i + 1, r);
+    return i + 1;
+}
+
+private static int RandomizedPartition(final double[] A, final int p, final int r) {
+    final int i = (int) Math.round(p + Math.random() * (r - p));
+    swap(A, i, r);
+    return partition(A, p, r);
+}
+} 
+
