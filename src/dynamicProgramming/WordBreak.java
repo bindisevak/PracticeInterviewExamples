@@ -1,10 +1,18 @@
 package dynamicProgramming;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class WordBreak {
 	public static void main(String[] args) {
-		
+		Set<String> set = new HashSet<String>();
+		set.add("leet");
+		set.add("code");
+		set.add("hell");
+		String s = "leetcode";
+		WordBreak wb = new WordBreak();
+		boolean result = wb.wordBreak(s, set);
+		System.out.println("Result: "+result);
 	}
 	
 	public boolean wordBreak(String s, Set<String> dict){

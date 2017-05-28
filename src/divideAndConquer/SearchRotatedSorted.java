@@ -46,7 +46,7 @@ public class SearchRotatedSorted {
 				}else{
 					left = mid+1;
 				}
-			}else if(nums[left]>mid){
+			}else if(nums[left]>nums[mid]){
 				if(nums[mid]<target && target<=nums[right]){
 					left = mid + 1;
 				}else{

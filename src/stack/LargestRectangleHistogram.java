@@ -5,7 +5,7 @@ import java.util.Stack;
 public class LargestRectangleHistogram {
 	public static void main(String[] args) {
 		LargestRectangleHistogram lr = new LargestRectangleHistogram();
-		int[] nums = {2,1,5,6,3};
+		int[] nums = {2,1,5,6,2,3};
 		System.out.println("Area: "+lr.getLargestArea(nums));
 	}
 	
@@ -19,11 +19,13 @@ public class LargestRectangleHistogram {
         for (int i = 0; i <= height.length; i++) {
             int curt = (i == height.length) ? -1 : height[i];
             while (!stack.isEmpty() && curt <= height[stack.peek()]) {
-                int h = height[stack.pop()];
+            	System.out.println(stack.peek());
+            	int h = height[stack.pop()];
                 int w = stack.isEmpty() ? i : i - stack.peek() - 1;
                 max = Math.max(max, h * w);
             }
             stack.push(i);
+            //System.out.println(stack.peek());
         }
         
         return max;

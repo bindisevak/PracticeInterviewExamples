@@ -1,5 +1,6 @@
 package dynamicProgramming;
 
+//Obstacle Grid time: O(M*N) space: O(M*N)
 public class UniquePaths {
 	public static void main(String[] args) {
 		int[][] arr = {{0,0,0},{0,1,0},{0,0,0}};
@@ -32,7 +33,7 @@ public class UniquePaths {
 			if(grid[0][i] == 1)
 				dp[0][i] = 0;
 			else
-				dp[0][i] = dp[i-1][0];
+				dp[0][i] = dp[0][i-1];
 		}
 		//fill up cells
 		for(int i=1; i<m; i++){

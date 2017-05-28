@@ -3,6 +3,9 @@ package dynamicProgramming;
 public class DecodeWays {
 	public static void main(String[] args) {
 		System.out.println("Result: "+numDecodings("29"));
+		System.out.println("Result: "+numDecodings("129"));
+		System.out.println("Result: "+numDecodings("22"));
+		System.out.println("Result: "+numDecodings("122"));
 	}
 	
 	public static int numDecodings(String s){
@@ -29,6 +32,7 @@ public class DecodeWays {
 				dp[i] = dp[i] + dp[i-1];
 			}
 			int val = Integer.parseInt(s.substring(i-1, i+1));
+			System.out.println(val);
 			if(val<=26 && val>=10){
 				dp[i] = dp[i] + dp[i-2];
 			}

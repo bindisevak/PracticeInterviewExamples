@@ -3,7 +3,7 @@ package arrays;
 public class MinimumSubArray {
 	public static void main(String[] args) {
 		MinimumSubArray arr = new MinimumSubArray();
-		int[] nums = {2,3,1,2,4,3};
+		int[] nums = {2,4,1,2,4};
 		int sum = 7;
 		System.out.println("Result length: "+arr.getMinArrayLength(sum, nums));
 	}
@@ -18,11 +18,13 @@ public class MinimumSubArray {
 			if(currSum < sum && end < nums.length){
 				currSum += nums[end];
 				end++;
+				System.out.println("In if:"+currSum);
 			}
 			else if(currSum >= sum){
 				minLen = Math.min(minLen, end-start);
 				currSum -= nums[start];
 				start++;
+				System.out.println("In else if:"+currSum);
 			}
 			else{
 				break;

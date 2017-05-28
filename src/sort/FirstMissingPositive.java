@@ -3,8 +3,11 @@ package sort;
 public class FirstMissingPositive {
 	public static void main(String[] args) {
 		int[] A = {3,4,-1,1};
+		int[] B= {2,0,1};
 		System.out.println("Result: "+getFirstMissing(A));
+		System.out.println("Result: "+getFirstMissing(B));
 	}
+	
 	
 	public static int getFirstMissing(int[] A){
 		if(A == null || A.length == 0)

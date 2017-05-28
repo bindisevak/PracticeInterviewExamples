@@ -3,6 +3,7 @@ package dynamicProgramming;
 public class ClimbingStairs {
 	public static void main(String[] args) {
 		System.out.println("Result: "+getClimbResult(4));
+		System.out.println("Result: "+getTripleClimbResult(4));
 	}
 	
 	public static int getClimbResult(int n){
@@ -18,5 +19,19 @@ public class ClimbingStairs {
 		}
 		System.out.println(num.length);
 		return num[n];
+	}
+	
+	public static int getTripleClimbResult(int n){
+		
+		if(n<0){
+			return 0;
+		}
+		else if(n==0 || n==1){
+			return 1;
+		}
+		else {
+			return getTripleClimbResult(n-1) + getTripleClimbResult(n-2) + getTripleClimbResult(n-3);
+		}
+		
 	}
 }

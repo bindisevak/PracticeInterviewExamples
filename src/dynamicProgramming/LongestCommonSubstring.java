@@ -2,8 +2,8 @@ package dynamicProgramming;
 
 public class LongestCommonSubstring {
 	public static void main(String[] args) {
-		String a = "abc";
-		String b = "abcd";
+		String a = "abcxyzgh";
+		String b = "defvwxyzgh";
 		System.out.println("Result: "+getLongestCommonSubstring(a, b));
 	}
 	

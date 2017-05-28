@@ -1,5 +1,7 @@
 package linkedlist;
 
+import linkedlist.LinkedList.Node;
+
 class LinkedList {
 	 
     public int val;
@@ -11,7 +13,7 @@ class LinkedList {
 		// TODO Auto-generated constructor stub
 	}
 	static Node head;
- 
+
     static class Node {
  
         int data;
@@ -22,7 +24,8 @@ class LinkedList {
             next = null;
         }
     }
-public static class AddTwoNumbers {
+}  
+public  class AddTwoNumbers {
 	public static void main(String[] args) {
 		LinkedList lt = new LinkedList();
 		lt.head = new Node(50);
@@ -39,7 +42,11 @@ public static class AddTwoNumbers {
         lt1.head.next.next.next.next = new Node(10);
         
         AddTwoNumbers am = new AddTwoNumbers();
-        am.getList(lt, lt1);
+        LinkedList lst = am.getList(lt, lt1);
+        while(lst != null){
+        	System.out.println(lst.val);
+        	lst = lst.next;
+        }
 	}
 	public LinkedList getList(LinkedList l1, LinkedList l2){
 		int carry = 0;
@@ -60,6 +67,7 @@ public static class AddTwoNumbers {
 			p3.next = new LinkedList(1);
 			p3 = p3.next;
 			carry /= 10;
+			System.out.println(carry);
 		}
 		if(carry == 1){
 			p3.next = new LinkedList(1);
@@ -67,4 +75,4 @@ public static class AddTwoNumbers {
 		return newhead.next;
 	}
 }
-}
+

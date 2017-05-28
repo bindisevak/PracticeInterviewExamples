@@ -5,8 +5,9 @@ import java.util.LinkedList;
 public class SlidingWindowMaximum {
 	public static void main(String[] args) {
 		SlidingWindowMaximum sw = new SlidingWindowMaximum();
-		int[] nums = {4,2,5,3,7,9};
-		int k = 3;
+		//int[] nums = {4,2,5,3,7,9};
+		int[] nums = {1,3,5,6,4,9,14,17,4,22,16,31,15};
+		int k = 4;
 		int[] result = sw.maxSlidingWindow(nums, k);
 		for(int i: result){
 			System.out.println(i);
@@ -21,8 +22,8 @@ public class SlidingWindowMaximum {
 	 
 	    LinkedList<Integer> deque = new LinkedList<Integer>();
 	    for(int i=0; i<nums.length; i++){
-	        if(!deque.isEmpty()&&deque.peekFirst()==i-k) 
-	            deque.poll();
+//	        if(!deque.isEmpty()&&deque.peekFirst()==i-k) 
+//	            deque.poll();
 	 
 	        while(!deque.isEmpty()&&nums[deque.peekLast()]<nums[i]){
 	            deque.removeLast();

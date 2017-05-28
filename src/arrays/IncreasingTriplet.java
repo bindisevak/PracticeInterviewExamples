@@ -3,7 +3,7 @@ package arrays;
 public class IncreasingTriplet {
 	public static void main(String[] args) {
 		IncreasingTriplet it = new IncreasingTriplet();
-		int[] nums = {1,2,3,4,5};
+		int[] nums = {1,3,3,2,1};
 		System.out.println("Result: "+it.getSubsequence(nums));
 	}
 	

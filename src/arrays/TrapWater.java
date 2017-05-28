@@ -43,7 +43,7 @@ public class TrapWater {
 		}
 		//calculate total
 		for(int i=0; i<height.length; i++){
-			result = result + Math.min(left[i], right[i]) -height[i];
+			result = result + Math.min(left[i], right[i]) - height[i];
 			
 		}
 		return result;

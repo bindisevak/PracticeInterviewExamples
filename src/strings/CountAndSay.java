@@ -3,7 +3,7 @@ package strings;
 public class CountAndSay {
 	public static void main(String[] args) {
 		CountAndSay cs = new CountAndSay();
-		int n = 21;
+		int n = 11;
 		String result = cs.getSequence(n);
 		System.out.println("Result: "+result);
 	}
