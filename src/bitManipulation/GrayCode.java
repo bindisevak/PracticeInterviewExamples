@@ -28,3 +28,45 @@ public class GrayCode {
 	        return result;
 	    }
 }
+
+//static List<Pair> solve(List<Pair> lunchMenuPairs, List<Pair> teamCuisinePreferencePairs){
+//	List<Pair> result= new ArrayList<>();
+//
+//	Map<String, List<String>> lunchCategories = new HashMap<>();
+//	
+//	for(Pair pairItr: lunchMenuPairs){
+//	    if(lunchCategories.containsKey(pairItr.getPairValue())){
+//	        List<String> menuList = lunchCategories.get(pairItr.getPairValue());
+//	        menuList.add(pairItr.getPairKey());
+//	        lunchCategories.put(pairItr.getPairValue(), menuList);
+//	    } else {
+//	       List<String> menuList = new ArrayList<>();
+//	        menuList.add(pairItr.getPairKey()); 
+//	        lunchCategories.put(pairItr.getPairValue(), menuList);
+//	    }
+//	    
+//	}
+//	
+//	for(Pair pairItr: teamCuisinePreferencePairs){
+//	    if(pairItr.getPairValue().equalsIgnoreCase("*")){
+//	       for(String cusine: lunchCategories.keySet()) {
+//	           List<String> menuList = lunchCategories.get(cusine);
+//	           for(String menu: menuList){
+//	               Pair pairItem = new Pair(pairItr.getPairKey(), menu);
+//	               result.add(pairItem);
+//	           }
+//	       }
+//	    }
+//	   else if(lunchCategories.containsKey(pairItr.getPairValue())){
+//	       List<String> menuList = lunchCategories.get(pairItr.getPairValue());
+//	       for(String menu: menuList){
+//	               Pair pairItem = new Pair(pairItr.getPairKey(), menu);
+//	               result.add(pairItem);
+//	           }
+//	    }
+//	    
+//	    
+//	}
+//
+//	return result;
+//}

@@ -18,7 +18,7 @@ public class LongestConsecutive {
 			set.add(e);
 		}
 		for(int e: nums){
-			int count = 0;
+			int count = 1;
 			int left = e-1;
 			int right = e+1;
 			
@@ -30,7 +30,7 @@ public class LongestConsecutive {
 			while(set.contains(right)){
 				count++;
 				set.remove(right);
-				right--;
+				right++;
 			}
 			max = Math.max(count, max);
 		}

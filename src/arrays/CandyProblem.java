@@ -3,7 +3,7 @@ package arrays;
 public class CandyProblem {
 	public static void main(String[] args) {
 		CandyProblem cp = new CandyProblem();
-		int[] ratings = {1,2,3,3,3};
+		int[] ratings = {2,4,2,6,1,7,8,9,2,1};
 		int sum = cp.getCandy(ratings);
 		System.out.println("Sum of candies: " +sum);
 	}

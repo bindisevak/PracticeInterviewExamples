@@ -20,7 +20,7 @@ public class GroupAnagrams {
 	public String[] getAnagrams(String[] strs){
 		List<List<String>> result = new ArrayList<List<String>>();
 		HashMap<String, List<String>> helper = new HashMap<String, List<String>>();
-		 HashSet<String> set = new HashSet<String>();
+		HashSet<String> set = new HashSet<String>();
 		Arrays.sort(strs);
 		
 		for(int i=0; i<strs.length; i++){

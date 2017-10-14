@@ -49,7 +49,7 @@ public class WordLadder {
 						arr[i]=c;
 					
 					String newWord = new String(arr);
-					//System.out.println(newWord);
+					System.out.println(newWord);
 					if(dict.contains(newWord)){
 						queue.add(new WordNode(newWord, top.numSteps+1));
 						dict.remove(newWord);

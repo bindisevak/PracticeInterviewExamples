@@ -5,8 +5,8 @@ import java.util.LinkedList;
 public class SlidingWindowMaximum {
 	public static void main(String[] args) {
 		SlidingWindowMaximum sw = new SlidingWindowMaximum();
-		//int[] nums = {4,2,5,3,7,9};
-		int[] nums = {1,3,5,6,4,9,14,17,4,22,16,31,15};
+		int[] nums = {4,2,5,3,7,9};
+		//int[] nums = {1,3,5,6,4,9,14,17,4,22,16,31,15};
 		int k = 4;
 		int[] result = sw.maxSlidingWindow(nums, k);
 		for(int i: result){

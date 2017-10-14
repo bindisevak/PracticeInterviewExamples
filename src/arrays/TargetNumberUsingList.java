@@ -6,7 +6,7 @@ public class TargetNumberUsingList {
 	public static void main(String[] args) {
 		
 	}
-	
+	//{1,2,3,4} and 21 ---> (1+2)*(3+4)=21
 	public static boolean isReachable(ArrayList<Integer> list, int target) {
 		if (list == null || list.size() == 0)
 			return false;

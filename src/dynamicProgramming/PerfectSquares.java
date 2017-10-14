@@ -11,7 +11,7 @@ public class PerfectSquares {
 	
 	public int numSquares(int n) {
 	    int max = (int) Math.sqrt(n);
-	 
+	    //System.out.println(max);
 	    int[] dp = new int[n+1];
 	    Arrays.fill(dp, Integer.MAX_VALUE);
 	 

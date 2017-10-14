@@ -5,9 +5,11 @@ import java.util.HashMap;
 public class NumToRoman {
 	public static void main(String[] args) {
 		NumToRoman nr = new NumToRoman();
-		int num = 5;
+		int num = 12;
 		String ans = nr.inttoRoman(num);
+		int result = nr.romanToInt("XI");
 		System.out.println("Ans: "+ans);
+		System.out.println(result);
 	}
 	
 	public String inttoRoman(int num){
@@ -18,7 +20,9 @@ public class NumToRoman {
 		 for(int i=0; num!=0; i++){
 			 while(num >= value[i]){
 				 num = num - value[i];
+				 //System.out.println(num);
 				 str = str+symbol[i];
+				// System.out.println(str);
 			 }
 		 }
 		 return str;

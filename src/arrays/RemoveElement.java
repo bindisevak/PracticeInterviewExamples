@@ -19,6 +19,6 @@ public class RemoveElement {
 			}
 			j++;
 		}
-		return i;
+		return i;//length after removing element
 	}
 }
